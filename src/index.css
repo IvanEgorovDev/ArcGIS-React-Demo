@@ -1,0 +1,7 @@
+@import "@arcgis/core/assets/esri/themes/light/main.css";
+@import "tailwindcss";
+
+.esri-view .esri-view-surface--touch-none:focus::after {
+  outline: none !important;
+} /* I usually remove default focus rentangle, in my experience majority of the clients
+  find it annoying and don't really need it for improved accessibility. Unless specified otherwise. */
