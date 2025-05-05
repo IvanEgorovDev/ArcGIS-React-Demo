@@ -16,7 +16,7 @@ const useInitMap = () => {
             // this is a public arcgis online item, so no need to configure portal data or provide credentials
           },
           popupEnabled: true,
-          popupTemplate: citiesPopupTemplate,
+          popupTemplate: citiesPopupTemplate, // configure popup, show city name in the title and population field in the content
         }),
       ],
     });

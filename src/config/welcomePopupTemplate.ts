@@ -4,14 +4,16 @@ const popupContent = `<b>This is a small demo of the React-based GIS web-applica
     <br/>
     Featuring:
         <ul class="list-disc pl-6">
-            <li>Custom default extent</li>
+            <li>Custom default map extent zoomed on Israel</li>
             <li>
+                <span>Capital cities from all over the world using </span>
                 <a class="text-blue-500 underline" href="https://www.arcgis.com/home/item.html?id=d9677f2ef1d547c29fc30e628596f0c0" target="_blank" rel="noopener noreferrer">
-                    World National Capital Cities Feature Layer
+                    World National Capital Cities
                 </a>
+                <span> AGOL item as a source data</span>
             </li>
             <li>
-                Custom popup template for the cities layer
+                Custom popup template for the cities layer displaying the name of the city and the population only
             </li>
         </ul>
     <br/>
