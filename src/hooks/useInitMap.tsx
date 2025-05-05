@@ -4,7 +4,6 @@ import MapView from "@arcgis/core/views/MapView.js";
 import { useEffect } from "react";
 import citiesPopupTemplate from "../config/citiesPopupTemplate";
 import welcomePopup from "../config/welcomePopupTemplate";
-import { worldCitiesUrl } from "../services/links";
 
 const useInitMap = () => {
   useEffect(() => {
@@ -12,9 +11,12 @@ const useInitMap = () => {
       basemap: "osm",
       layers: [
         new FeatureLayer({
-          url: worldCitiesUrl,
+          portalItem: {
+            id: "d9677f2ef1d547c29fc30e628596f0c0", // use https://www.arcgis.com/home/item.html?id=d9677f2ef1d547c29fc30e628596f0c0 as source data
+            // this is a public arcgis online item, so no need to configure portal data or provide credentials
+          },
           popupEnabled: true,
-          popupTemplate: citiesPopupTemplate,
+          popupTemplate: citiesPopupTemplate, // configure popup, show city name in the title and population field in the content
         }),
       ],
     });
@@ -22,7 +24,7 @@ const useInitMap = () => {
     const mapView = new MapView({
       container: "viewDiv",
       map,
-      center: [34.7699, 32.045],
+      center: [34.7699, 32.045], // default map zoomed on Israel
       zoom: 10,
       ui: {
         components: ["attribution"], // remove default top-left zoom widget
